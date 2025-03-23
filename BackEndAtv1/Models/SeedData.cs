@@ -18,9 +18,9 @@ namespace BackEndAtv1.Models
                     new Participante { Nome = "Celso Ramos", EventoID = 3 });
 
                 context.Eventos.AddRange(
-                    new Evento { Nome = "JOIN 2025" },
-                    new Evento { Nome = "Hackathon 2025" },
-                    new Evento { Nome = "Experience Day 2025" });
+                    new Evento { Nome = "JOIN 2025", Horas = 10 },
+                    new Evento { Nome = "Hackathon 2025", Horas = 3 },
+                    new Evento { Nome = "Experience Day 2025", Horas = 5 });
 
                 context.SaveChanges();
             }

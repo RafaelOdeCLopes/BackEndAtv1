@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BackEndAtv1.Controllers
 {
-    public class ProdutoController : Controller
+    public class ParticipanteController : Controller
     {
         public Context context;
 
-        public ProdutoController(Context ctx)
+        public ParticipanteController(Context ctx)
         {
             context = ctx;
         }
@@ -24,7 +24,7 @@ namespace BackEndAtv1.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.EventoID = new SelectList(context.Eventos.OrderBy(f => f.Nome), "FabricanteID", "Nome");
+            ViewBag.EventoID = new SelectList(context.Eventos.OrderBy(f => f.Nome), "EventoID", "Nome");
             return View();
         }
 
@@ -38,14 +38,14 @@ namespace BackEndAtv1.Controllers
 
         public IActionResult Details(int id)
         {
-            var produto = context.Participantes.Include(f => f.Evento).FirstOrDefault(p => p.ParticipanteID == id);
-            return View(produto);
+            var participante = context.Participantes.Include(f => f.Evento).FirstOrDefault(p => p.ParticipanteID == id);
+            return View(participante);
         }
         public IActionResult Edit(int id)
         {
-            var produto = context.Participantes.Find(id);
-            ViewBag.FabricanteID = new SelectList(context.Eventos.OrderBy(f => f.Nome), "EventoID", "Nome");
-            return View(produto);
+            var participante = context.Participantes.Find(id);
+            ViewBag.EventoID = new SelectList(context.Eventos.OrderBy(f => f.Nome), "EventoID", "Nome");
+            return View(participante);
         }
 
         [HttpPost]
