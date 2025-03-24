@@ -1,0 +1,12 @@
+﻿@model BackEndAtv1.Models.Participante
+
+@{
+    ViewData["Title"] = "Gerar certificado de participação";
+}
+<br><br>
+<h1>Certificado de Participação</h1>
+<br>
+<p>Certificamos que <strong>@Model.Nome</strong> participou do evento <strong>@Model.Evento.Nome</strong>, com duração de @Model.Evento.Horas horas complementares.</p>
+
+<a href="javascript:window.print()" class="btn btn-primary">Imprimir certificado</a>
+<a asp-action="Index">Voltar à lista</a>

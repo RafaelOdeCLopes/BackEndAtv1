@@ -69,5 +69,11 @@ namespace BackEndAtv1.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Certificado(int id)
+        {
+            var participante = context.Participantes.Include(p => p.Evento).FirstOrDefault(p => p.ParticipanteID == id);
+            return View(participante);
+        }
     }
 }

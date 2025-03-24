@@ -31,7 +31,10 @@
                 <ul class="list-unstyled">
                     @foreach (var participante in Model.Participantes)
                     {
-                        <li>@Html.DisplayFor(modelItem => participante.Nome)</li>
+                        <li>
+                            @Html.DisplayFor(modelItem => participante.Nome)
+                            | <a asp-controller="Participante" asp-action="Certificado" asp-route-id="@participante.ParticipanteID">Gerar certificado</a>
+                        </li>
                     }
                 </ul>
             }
