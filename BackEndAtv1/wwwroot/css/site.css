@@ -3,10 +3,13 @@ html {
   position: relative;
   min-height: 100%;
   font-size: 14px; /* Utilize unidades relativas como 'em' ou 'rem' */
+  background-color: #191970; /* Azul Escuro para fundo */
+  color: #fff; /* Texto branco para contraste */
 }
 
 body {
   padding-bottom: 60px; /* Utilize padding para altura mínima */
+  font-family: 'Roboto', sans-serif; /* Uma fonte moderna e legível */
 }
 
 /* Estilos para Botões e Formulários */
@@ -14,13 +17,47 @@ body {
 .btn-link.nav-link,
 .form-control,
 .form-check-input {
-  outline: 2px solid #258cfb; /* Utilize outline para foco */
-  outline-offset: 2px; /* Adicione espaço entre o outline e o elemento */
+  outline: 2px solid #5851DB; /* Utilize outline para foco, roxo vibrante */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
 }
 
-/* Estilos Responsivos */
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.btn {
+  background-color: #5851DB; /* Roxo vibrante para botões */
+  color: #fff; /* Texto branco para contraste */
+  padding: 12px 24px; /* Ajuste o padding conforme necessário */
+  border-radius: 5px; /* Arredondamento suave */
+  cursor: pointer; /* Cursor de mão para indicar interação */
+}
+
+.btn:hover {
+  background-color: #00FF00; /* Verde Neon ao passar o mouse */
+}
+
+.btn:active {
+  background-color: #FF69B4; /* Rosa Neon ao clicar */
+  transform: translateY(2px); /* Leve elevação para efeito de clique */
+}
+
+/* Estilos para Formulários */
+.form-control {
+  background-color: #282c34; /* Cinza escuro para contraste */
+  color: #fff; /* Texto branco para contraste */
+  border: none; /* Sem borda */
+  padding: 10px 15px; /* Ajuste o padding conforme necessário */
+  border-radius: 5px; /* Arredondamento suave */
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px #5851DB; /* Sombra roxa vibrante ao focar */
+}
+
+/* Estilos para Links */
+.btn-link.nav-link {
+  color: #fff; /* Texto branco para contraste */
+  text-decoration: none; /* Sem sublinhado */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+.btn-link.nav-link:hover {
+  color: #00FF00; /* Verde Neon ao passar o mouse */
 }
