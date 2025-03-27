@@ -1,217 +1,130 @@
-/* Estilo para a tela inicial */
-.tela-inicial {
-    background-color: #f4f4f4; /* Fundo claro e clean */
-    padding: 20px;
+/* Configuração geral */
+html {
+    font-size: 14px;
 }
 
-/* Estilo para os banners dos eventos */
-.banner-evento {
-    background-color: #fff; /* Fundo branco para os banners */
-    border-radius: 10px; /* Borda arredondada para um visual moderno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar os banners */
-    margin-bottom: 20px;
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+body {
+    background-color: #f4f4f4; /* Fundo claro e clean */
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Estilo para seções principais */
+.container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para eventos */
+.lista-eventos, .lista-participantes {
+    list-style: none;
+    padding: 0;
+}
+
+.item-evento, .item-participante {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
     padding: 15px;
 }
 
-    /* Estilo para o título do banner */
-    .banner-evento h3 {
-        font-weight: bold; /* Título em negrito para destaque */
+    .item-evento h4, .item-participante h5 {
+        font-weight: bold;
         margin-bottom: 10px;
     }
 
-    /* Estilo para a imagem do banner */
-    .banner-evento img {
-        width: 100%; /* A imagem ocupa toda a largura do banner */
-        height: auto; /* A altura se ajusta automaticamente à largura */
-        border-radius: 8px; /* Borda arredondada para a imagem */
+    .item-evento .data-inicio, .item-participante .email {
+        color: #6c757d;
+        font-style: italic;
     }
 
-/* Estilo para o botão "Adicionar Evento" */
-.btn-adicionar-evento {
-    background-color: #007bff; /* Azul padrão do Bootstrap */
-    color: #fff; /* Texto branco */
-    border: none; /* Sem borda */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Borda arredondada */
-    font-weight: bold; /* Texto em negrito */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+/* Botões */
+.btn-primary, .btn-detalhes {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-    /* Efeito hover para o botão */
-    .btn-adicionar-evento:hover {
-        background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-    }
-/* Estilo para a tela de eventos */
-.tela-eventos {
-    background-color: #f4f4f4; /* Fundo claro e clean */
-    padding: 20px;
-}
-
-/* Estilo para a lista de eventos */
-.lista-eventos {
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o espaçamento da lista */
-}
-
-/* Estilo para cada item da lista de eventos */
-.item-evento {
-    background-color: #fff; /* Fundo branco para cada item */
-    border-radius: 10px; /* Borda arredondada para um visual moderno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar os itens */
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-    /* Estilo para o título do evento */
-    .item-evento h4 {
-        font-weight: bold; /* Título em negrito para destaque */
-        margin-bottom: 10px;
+    .btn-primary:hover, .btn-detalhes:hover {
+        background-color: #0056b3;
     }
 
-    /* Estilo para a data de início do evento */
-    .item-evento .data-inicio {
-        font-style: italic; /* Texto em itálico para a data */
-        color: #6c757d; /* Cor cinza para a data */
-    }
-
-/* Estilo para o botão "Detalhes" */
-.btn-detalhes {
-    background-color: #007bff; /* Azul padrão do Bootstrap */
-    color: #fff; /* Texto branco */
-    border: none; /* Sem borda */
-    padding: 8px 15px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Borda arredondada */
-    font-weight: bold; /* Texto em negrito */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
-}
-
-    /* Efeito hover para o botão */
-    .btn-detalhes:hover {
-        background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-    }
-/* Estilo para a tela de participantes */
-.tela-participantes {
-    background-color: #f4f4f4; /* Fundo claro e clean */
-    padding: 20px;
-}
-
-/* Estilo para a lista de participantes */
-.lista-participantes {
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o espaçamento da lista */
-}
-
-/* Estilo para cada item da lista de participantes */
-.item-participante {
-    background-color: #fff; /* Fundo branco para cada item */
-    border-radius: 10px; /* Borda arredondada para um visual moderno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar os itens */
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-    /* Estilo para o nome do participante */
-    .item-participante h5 {
-        font-weight: bold; /* Nome em negrito para destaque */
-        margin-bottom: 5px;
-    }
-
-    /* Estilo para o email do participante */
-    .item-participante .email {
-        color: #6c757d; /* Cor cinza para o email */
-    }
 /* Estilo para a tela de detalhes do evento */
-.tela-detalhes {
-    background-color: #f4f4f4; /* Fundo claro e clean */
+.detalhes-evento {
     padding: 20px;
 }
 
-/* Estilo para o título do evento */
-.detalhes-evento h2 {
-    font-weight: bold; /* Título em negrito para destaque */
-    margin-bottom: 20px;
-}
-
-/* Estilo para as informações do evento */
-.detalhes-evento .info-evento {
-    margin-bottom: 15px;
-}
-
-    /* Estilo para o título das informações */
-    .detalhes-evento .info-evento h5 {
-        font-weight: bold; /* Título em negrito para destaque */
-        margin-bottom: 5px;
+    .detalhes-evento h2 {
+        font-weight: bold;
+        margin-bottom: 20px;
     }
 
-    /* Estilo para o conteúdo das informações */
-    .detalhes-evento .info-evento p {
-        color: #6c757d; /* Cor cinza para o conteúdo */
+    .detalhes-evento .info-evento {
+        margin-bottom: 15px;
     }
-/* Estilo para a tela de certificado */
+
+/* Certificado */
 .tela-certificado {
-    background-color: #fff; /* Fundo branco para a tela */
+    background-color: #fff;
     padding: 20px;
-    text-align: center; /* Centraliza o conteúdo da tela */
+    text-align: center;
 }
 
-/* Estilo para o certificado */
-/* Estilo para a tela de certificado */
-.tela-certificado {
-    background-color: #fff; /* Fundo branco para a tela */
-    padding: 20px;
-    text-align: center; /* Centraliza o conteúdo da tela */
-}
-
-/* Estilo para o certificado */
 .certificado {
-    background-color: #f4f4f4; /* Fundo claro para o certificado */
-    border-radius: 10px; /* Borda arredondada para um visual moderno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o certificado */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-    position: relative; /* Posicionamento relativo para a moldura */
+    position: relative;
+    border: 5px solid #007bff;
 }
 
-/* Estilo para a moldura moderna */
-.moldura {
-    position: absolute; /* Posicionamento absoluto para a moldura */
-    top: 0; /* Posição superior da moldura */
-    left: 0; /* Posição esquerda da moldura */
-    width: 100%; /* Largura da moldura */
-    height: 100%; /* Altura da moldura */
-    border: 5px solid #007bff; /* Borda fina azul vibrante */
-    border-radius: 10px; /* Borda arredondada da moldura */
-    z-index: -1; /* Coloca a moldura atrás do certificado */
-}
+    .certificado h2 {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-/* Estilo para o título do certificado */
-.certificado h2 {
-    font-weight: bold; /* Título em negrito para destaque */
-    margin-bottom: 10px;
-}
+    .certificado p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
 
-/* Estilo para o conteúdo do certificado */
-.certificado p {
-    font-size: 16px; /* Tamanho da fonte do conteúdo */
-    line-height: 1.5; /* Espaçamento entre as linhas */
-    margin-bottom: 15px;
-}
-
-/* Estilo para o botão "Imprimir" */
 .btn-imprimir {
-    background-color: #28a745; /* Verde do Bootstrap */
-    color: #fff; /* Texto branco */
-    border: none; /* Sem borda */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Borda arredondada */
-    font-weight: bold; /* Texto em negrito */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-    /* Efeito hover para o botão */
     .btn-imprimir:hover {
-        background-color: #218838; /* Verde mais escuro ao passar o mouse */
+        background-color: #218838;
     }
